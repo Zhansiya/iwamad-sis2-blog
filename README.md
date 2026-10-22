@@ -1,32 +1,47 @@
-# React + TypeScript + Vite
+# Zhansiya's Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive personal blog built with React and TypeScript for SIS Assignment 2.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + TypeScript
+- React Router
+- Responsive design
+- 5 blog posts rendered from a typed array
+- Dynamic post routes using `/posts/:id`
+- Independent Like buttons using local state
+- Custom 404 page
+- Simulated authentication
+- Protected `/saved` route
+- Responsive layout for desktop and mobile
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Home
+- Posts
+- Individual Post
+- Contact
+- Sign In
+- Saved Posts
+- 404 Page
 
-## Expanding the Oxlint configuration
+## Protected Route
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+The `/saved` page is protected.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+A signed-out user who tries to access `/saved` is redirected to `/signin`.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+After signing in, the user can access the Saved Posts page and sign out again.
+
+## Tests
+
+The project includes 3 automated tests:
+
+1. LikeButton interaction test
+2. PostsPage rendering test
+3. ProtectedRoute redirect test
+
+Run tests with:
+
+```bash
+npm test
