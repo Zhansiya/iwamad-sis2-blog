@@ -8,22 +8,28 @@ type PostCardProps = {
 
 function PostCard({ post }: PostCardProps) {
   return (
-    <article>
+    <article className="post-card">
+      <p className="post-date">{post.date}</p>
+
       <h2>{post.title}</h2>
 
-      <p>{post.date}</p>
+      <p className="post-excerpt">{post.excerpt}</p>
 
-      <p>{post.excerpt}</p>
-
-      <div>
+      <div className="post-tags">
         {post.tags.map((tag) => (
-          <span key={tag}>{tag} </span>
+          <span key={tag} className="tag">
+            {tag}
+          </span>
         ))}
       </div>
 
-      <LikeButton />
-      
-      <Link to={`/posts/${post.id}`}>Read more</Link>
+      <div className="post-actions">
+        <LikeButton />
+
+        <Link to={`/posts/${post.id}`} className="read-more">
+          Read more →
+        </Link>
+      </div>
     </article>
   )
 }

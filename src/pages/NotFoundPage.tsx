@@ -3,11 +3,20 @@ import { Link } from 'react-router'
 function NotFoundPage() {
   return (
     <main>
-      <h1>404</h1>
-      <h2>Page not found</h2>
-      <p>Sorry, the page you are looking for does not exist.</p>
+      <section className="not-found">
+        <p className="error-code">ERROR 404</p>
 
-      <Link to="/">Back to Home</Link>
+        <h1>Page not found.</h1>
+
+        <p>
+          Sorry, the page you are looking for doesn't exist or may have
+          been moved.
+        </p>
+
+        <Link to="/" className="primary-button">
+          Back to Home
+        </Link>
+      </section>
     </main>
   )
 }
