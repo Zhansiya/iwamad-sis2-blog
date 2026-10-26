@@ -48,4 +48,4 @@ npm test
 
 ## Site
 
- https://zhansiya.github.io/iwamad-sis2-blog/
+https://zhansiya.github.io/iwamad-sis2-blog/
